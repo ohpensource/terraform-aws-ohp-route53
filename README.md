@@ -65,6 +65,11 @@ No modules.
 
 ### Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_arn"></a> [arn](#output\_arn) | n/a |
+| <a name="output_name_servers"></a> [name\_servers](#output\_name\_servers) | n/a |
+| <a name="output_zone_id"></a> [zone\_id](#output\_zone\_id) | n/a |
+| <a name="output_zone_name"></a> [zone\_name](#output\_zone\_name) | n/a |
 
 <!--- END_TF_DOCS --->
