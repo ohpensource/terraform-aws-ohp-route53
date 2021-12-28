@@ -14,7 +14,7 @@ locals {
 
   records_by_name = {
     for product in setproduct(local.zones, keys(local.records_expanded)) : "${product[1]}-${product[0]}" => {
-      zone_id = try(aws_route53_zone.default[product[0]].id, null)
+      zone_id = try(aws_route53_zone.main[product[0]].id, null)
       type    = local.records_expanded[product[1]].type
       name    = local.records_expanded[product[1]].name
       ttl     = local.records_expanded[product[1]].ttl
@@ -39,4 +39,4 @@ locals {
   skip_zone_creation = length(local.zones) == 0
   run_in_vpc         = length(var.vpc_ids) > 0
 
-}   
+}

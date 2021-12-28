@@ -1,4 +1,4 @@
-resource "aws_route53_zone" "default" {
+resource "aws_route53_zone" "main" {
   for_each = var.route53_create ? toset(local.zones) : []
 
   name = each.value
@@ -17,7 +17,7 @@ resource "aws_route53_zone" "default" {
   )
 
 }
-resource "aws_route53_record" "default" {
+resource "aws_route53_record" "main" {
   for_each = var.route53_create ? local.records : {}
 
   zone_id = each.value.zone_id
